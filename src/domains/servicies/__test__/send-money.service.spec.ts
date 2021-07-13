@@ -17,7 +17,7 @@ describe('SendMoneyService', () => {
       when(mockedAccountEntity.withdraw(anything(), anyString())).thenReturn(true);
       when(mockedAccountEntity.deposit(anything(), anyString())).thenReturn(true);
       const account = instance(mockedAccountEntity);
-      when(loadAccountPort.loadAccount(id)).thenReturn(account);
+      when(loadAccountPort.loadAccount(id)).thenResolve(account);
       return account;
     }
 
